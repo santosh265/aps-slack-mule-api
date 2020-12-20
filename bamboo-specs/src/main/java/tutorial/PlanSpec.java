@@ -43,8 +43,8 @@ public class PlanSpec {
 
     Project project() {
         return new Project()
-                .name("Project Name")
-                .key("PRJ");
+                .name("aps-slack-mule-api")
+                .key("ASM");
     }
 
     Plan createPlan() {
