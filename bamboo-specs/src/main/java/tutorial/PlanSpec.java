@@ -34,7 +34,7 @@ public class PlanSpec {
 
     PlanPermissions createPlanPermission(PlanIdentifier planIdentifier) {
         Permissions permission = new Permissions()
-                .userPermissions("admin", PermissionType.ADMIN, PermissionType.CLONE, PermissionType.EDIT)
+                .userPermissions("santosh", PermissionType.ADMIN, PermissionType.CLONE, PermissionType.EDIT)
                 .groupPermissions("bamboo-admin", PermissionType.ADMIN)
                 .loggedInUserPermissions(PermissionType.VIEW)
                 .anonymousUserPermissionView();
