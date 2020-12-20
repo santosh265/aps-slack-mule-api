@@ -50,7 +50,7 @@ public class PlanSpec {
     Plan createPlan() {
         return new Plan(
                 project(),
-                "Plan Name", "PLANKEY")
+                "aps-slack-mule-api", "PLANKEY")
                 .description("Plan created from (enter repository url of your plan)");
     }
 
