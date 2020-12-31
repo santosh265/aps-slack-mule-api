@@ -3,8 +3,8 @@ agent any
 stages{
 stage('JOKE'){
 steps{
-bat 'mvn clean'
-bat 'mvn clean'
-bat 'mvn clean install'}
+sh 'mvn clean'
+sh 'mvn clean'
+sh 'mvn clean install'}
 }}
 }
