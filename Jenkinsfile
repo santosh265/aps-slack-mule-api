@@ -4,7 +4,6 @@ stages{
 stage('JOKE'){
 steps{
 sh 'mvn clean'
-bat 'mvn clean'
-bat 'mvn clean install'}
+bat 'mvn clean package'}
 }}
 }
