@@ -14,11 +14,6 @@ pipeline {
 			bat 'mvn clean package'
 		}
 	}
-	stage('DEPLOY ARTIFACT TO ARTIFACTORY'){
-		steps{
-			bat 'mvn deploy'
-		}
-	}
 	stage('DEPLOY TO CLOUDHUB'){
 		environment{
 			ANYPOINT_CREDENTIALS = credentials('AnypointPlatform')
