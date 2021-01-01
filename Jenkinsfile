@@ -1,6 +1,5 @@
 pipeline{
 agent any
-triggers{ cron('* * * * *') }
 stages{
 stage('JOKE'){
 steps{
