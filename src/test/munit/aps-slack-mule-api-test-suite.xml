@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="aps-slack-mule-api-test-suite.xml" />
+	<munit:test name="aps-slack-mule-api-test-suite-aps-slack-mule-apiFlowTest" doc:id="54c051df-ebd2-4e24-8087-7e0c46fa0b84" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to aps-slack-mule-apiFlow" doc:id="395ebb2f-81b6-43dc-812a-e77da04e199f" name="aps-slack-mule-apiFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="4c498990-9cb7-420c-8e68-b331acf57be3" actual="#[payload]" expected="#[%dw 2.0
+output application/json
+---
+{'hello':'world'}]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
