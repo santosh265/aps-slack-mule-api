@@ -3,22 +3,22 @@ pipeline {
 	triggers{
 		pollSCM '* * * * *'
 	}
-	stages('TEST'){
+	stage('TEST'){
 		steps{
 			bat 'mvn test'
 		}
 	}
-	stages('BUILD'){
+	stage('BUILD'){
 		steps{
 			bat 'mvn clean package'
 		}
 	}
-	stages('DEPLOY ARTIFACT TO ARTIFACTORY'){
+	stage('DEPLOY ARTIFACT TO ARTIFACTORY'){
 		steps{
 			bat 'mvn deploy'
 		}
 	}
-	stages('DEPLOY TO CLOUDHUB'){
+	stage('DEPLOY TO CLOUDHUB'){
 		environment{
 			ANYPOINT_CREDENTIALS = credentials(AnypointPlatform)
 		}
