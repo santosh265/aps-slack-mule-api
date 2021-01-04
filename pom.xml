@@ -45,7 +45,8 @@
 						<!-- To Save Time ($$$) During CICD -->
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
-				</configuration>
+				<classifier>mule-application</classifier>
+                </configuration>
 			</plugin>
 		<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
