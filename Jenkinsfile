@@ -11,7 +11,7 @@ pipeline {
     stages{
         stage('TEST'){
             steps{
-            	echo '${APP_NAME}'
+            	sh '$APP_NAME'
                 bat 'mvn test'
             }
         }
