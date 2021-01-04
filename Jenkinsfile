@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        ENV_NAME = "${env.BRANCH_NAME == "master" ? "Sandbox" : "Production"}"
+        ENV_NAME = "${env.BRANCH_NAME == "develop" ? "Sandbox" : "Production"}"
         APP_TAG = "${env.ENV_NAME == "Sandbox" ? "dev" : "prod"}"
         APP_NAME = "aps-slack-mule-api-${APP_TAG}"
     }
@@ -11,6 +11,7 @@ pipeline {
     stages{
         stage('TEST'){
             steps{
+            	echo '${APP_NAME}'
                 bat 'mvn test'
             }
         }
