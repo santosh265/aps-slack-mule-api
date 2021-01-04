@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        ENV_NAME = "${env.BRANCH_NAME == "master" ? "Sandbox" : "Design"}"
+        ENV_NAME = "${env.BRANCH_NAME == "master" ? "Sandbox" : "Production"}"
     }
     triggers{
         pollSCM '* * * * *'
