@@ -11,7 +11,7 @@ pipeline {
     stages{
         stage('TEST'){
             steps{
-            	sh $APP_NAME
+            	sh 'printenv'
                 bat 'mvn test'
             }
         }
