@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        ENV_NAME = "${env.BRANCH_NAME == "master" ? "Sandbox" : "Design"}"
+    }
     triggers{
         pollSCM '* * * * *'
     }
@@ -18,17 +21,8 @@ pipeline {
             environment{
                 ANYPOINT_CREDENTIALS = credentials('AnypointPlatform')
             }
-            when{
-            branch 'master'
-            }
             steps{
-                bat 'mvn deploy -DmuleDeploy -DskipTests -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox'
-            }
-            when{
-            branch 'develop'
-            }
-            steps{
-            	bat 'mvn deploy -DmuleDeploy -DskipTests -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Design'
+                bat 'mvn deploy -DmuleDeploy -DskipTests -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=${ENV_NAME}'
             }
         }
     }
