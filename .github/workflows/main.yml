@@ -32,4 +32,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build with Maven
-        run: mvn deploy -DskipTests -DmuleDeploy -Dusername=Mt6test -Dpassword=Logger@123 -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
+        run: mvn deploy -DskipTests -DmuleDeploy -Dusername=${{ secrets.ANYPOINT_USR }} -Dpassword=${{ secrets.ANYPOINT_PSW }} -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
