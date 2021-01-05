@@ -35,4 +35,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: action-maven
-        run: mvn clean
+        run: mvn deploy -DskipTests -DmuleDeploy -Dusername=Mt6test -Dpassword=Logger@123 -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sanbox
