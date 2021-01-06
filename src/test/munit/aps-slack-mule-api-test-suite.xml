@@ -8,6 +8,7 @@
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
 	<munit:config name="aps-slack-mule-api-test-suite.xml" />
+	<munit:dynamic-port doc:name="MUnit dynamic port" doc:id="12c8422e-522d-4824-837f-d95da0bc6c33" propertyName="http.port" min="6000" max="7000" />
 	<munit:test name="aps-slack-mule-api-test-suite-aps-slack-mule-apiFlowTest" doc:id="54c051df-ebd2-4e24-8087-7e0c46fa0b84" description="Test">
 		<munit:execution >
 			<flow-ref doc:name="Flow-ref to aps-slack-mule-apiFlow" doc:id="395ebb2f-81b6-43dc-812a-e77da04e199f" name="aps-slack-mule-apiFlow"/>
