@@ -22,7 +22,7 @@ pipeline {
         }
         stage('PUBLISH ARTIFACT TO JFROG'){
         	steps{
-        		bat 'mvn deploy'
+        		bat 'mvn -X deploy'
         	}
         }
         stage('DEPLOY TO CLOUDHUB'){
