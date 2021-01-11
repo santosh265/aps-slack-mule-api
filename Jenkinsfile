@@ -6,7 +6,7 @@ pipeline {
         APP_NAME = "aps-slack-mule-api-${APP_TAG}"
     }
     triggers{
-        githubPush()
+        pollSCM '* * * * *'
     }
     stages{
         stage('TEST'){
