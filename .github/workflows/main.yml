@@ -34,4 +34,4 @@ jobs:
       - shell: bash
         run: curl -o settings.xml https://raw.githubusercontent.com/santosh265/maven-settings/main/settings.xml
       - name: Build with Maven
-        run: mvn -s https://raw.githubusercontent.com/santosh265/maven-settings/main/settings.xml -Dnexus=${{ secrets.NEXUS }} deploy -DmuleDeploy -Dusername=${{ secrets.ANYPOINT_USR }} -Dpassword=${{ secrets.ANYPOINT_PSW }} -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
+        run: mvn deploy -DmuleDeploy -Dusername=${{ secrets.ANYPOINT_USR }} -Dpassword=${{ secrets.ANYPOINT_PSW }} -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
