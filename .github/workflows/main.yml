@@ -25,7 +25,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
       - shell: bash
         run: curl -o settings.xml https://raw.githubusercontent.com/santosh265/maven-settings/main/settings.xml
       - name: Build with Maven
-        run: mvn -s settings.xml deploy -DmuleDeploy -Dusername=${{ secrets.ANYPOINT_USR }} -Dpassword=${{ secrets.ANYPOINT_PSW }} -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
+        run: mvn -s settings.xml -Dnexus=${{ secrets.NEXUS }} deploy -DskipTests -DmuleDeploy -Dusername=${{ secrets.ANYPOINT_USR }} -Dpassword=${{ secrets.ANYPOINT_PSW }} -DapplicationName=Zasew-QW -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2 -Denvironment=Sandbox
