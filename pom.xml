@@ -43,7 +43,7 @@
 						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 						<workerType>${workerType}</workerType>
-						<!-- To Save Time ($$$) During CICD -->
+						
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
