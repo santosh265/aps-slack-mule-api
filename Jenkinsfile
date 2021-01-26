@@ -20,11 +20,6 @@ pipeline {
                 bat 'mvn clean package -DskipTests'
             }
         }
-        stage('PUBLISH ARTIFACT TO JFROG'){
-        	steps{
-        		bat 'mvn deploy'
-        	}
-        }
         stage('DEPLOY TO CLOUDHUB'){
             environment{
                 ANYPOINT_CREDENTIALS = credentials('AnypointPlatform')
