@@ -3,7 +3,7 @@ pipeline {
     environment {
         ENV_NAME = "${env.BRANCH_NAME == "develop" ? "Sandbox" : "Production"}"
         APP_TAG = "${env.ENV_NAME == "Sandbox" ? "dev" : "prod"}"
-        APP_NAME = "aps-slack-mule-api-${APP_TAG}"
+        APP_NAME = "aps-slack-mule-api-kasb-${APP_TAG}"
     }
     triggers{
         pollSCM '* * * * *'
