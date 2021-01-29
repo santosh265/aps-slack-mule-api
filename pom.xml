@@ -130,11 +130,5 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	<distributionManagement>
-		<repository>
-			<id>jfrog</id>
-			<name>jfrog repo</name>
-			<url>http://localhost:8082/artifactory/libs-snapshot/</url>
-		</repository>
-	</distributionManagement>
+	
 </project>
