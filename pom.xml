@@ -45,12 +45,24 @@
 						<objectStoreV2>true</objectStoreV2>
 						<workerType>${workerType}</workerType>
 						<skipDeploymentVerification>true</skipDeploymentVerification>
-						<properties>
-        						<muleDeploy>true</muleDeploy>
-      						</properties>
 					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						      <configuration>
+     
+        <properties>
+          <muleDeploy>true</muleDeploy>
+        </properties>
+      </configuration>
+					</execution>
+				</executions>				
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
