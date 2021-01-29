@@ -17,6 +17,7 @@
 		<app.runtime>4.3.0</app.runtime>
 		<mule.maven.plugin.version>3.4.2</mule.maven.plugin.version>
 		<munit.version>2.3.1</munit.version>
+		<muleDeploy>true</muleDeploy>
 	</properties>
 
 	<build>
@@ -43,8 +44,10 @@
 						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 						<workerType>${workerType}</workerType>
-						
 						<skipDeploymentVerification>true</skipDeploymentVerification>
+						<properties>
+        						<muleDeploy>true</muleDeploy>
+      						</properties>
 					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
