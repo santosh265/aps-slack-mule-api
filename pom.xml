@@ -46,7 +46,7 @@
 						<workerType>${workerType}</workerType>
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
-					<classifier>mule-application</classifier>
+					
 				</configuration>
 				<executions>
 					<execution>
@@ -55,14 +55,11 @@
 						<goals>
 							<goal>deploy</goal>
 						</goals>
-						      <configuration>
-     
-        <properties>
-          <muleDeploy>true</muleDeploy>
-        </properties>
-      </configuration>
+						<configuration>
+							<classifier>mule-application</classifier>
+						</configuration>
 					</execution>
-				</executions>				
+				</executions>		
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
