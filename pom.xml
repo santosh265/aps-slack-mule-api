@@ -30,7 +30,6 @@
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
-				<muleDeploy>true</muleDeploy>
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
