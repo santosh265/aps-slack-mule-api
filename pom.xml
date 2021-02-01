@@ -45,7 +45,7 @@
 						<workerType>${workerType}</workerType>
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
-					<muleDeploy><true</muleDeploy>>
+					<muleDeploy>true</muleDeploy>
 				</configuration>
 				<executions>
 					<execution>
