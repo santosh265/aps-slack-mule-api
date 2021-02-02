@@ -53,7 +53,19 @@
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
 					<muleDeploy>true</muleDeploy>
-				</configuration>	
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+                    <configuration>
+                            <classifier>mule-application</classifier>
+                        </configuration>
+					</execution>
+				</executions>				
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
