@@ -52,7 +52,7 @@
 						<workerType>${workerType}</workerType>
 						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
-					
+					<muleDeploy>true</muleDeploy>
 				</configuration>	
 			</plugin>
 			<plugin>
