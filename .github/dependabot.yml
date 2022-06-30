@@ -1,0 +1,14 @@
+version: 2
+# Authentication details that Dependabot can use to access private package registries
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#configuration-options-for-private-registries
+# https://jfrog.com/knowledge-base/artifactory-how-to-integrate-github-dependabot-with-jfrog-artifactory/
+
+# How Dependabot updates the versions or your project's dependencies
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#configuration-options-for-the-dependabotyml-file
+updates:
+  # Java projects using Maven
+  - package-ecosystem: maven
+    directory: "/"
+    registries: "*"
+    schedule:
+      interval: daily
